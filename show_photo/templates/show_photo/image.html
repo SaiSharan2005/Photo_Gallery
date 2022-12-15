@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel=”stylesheet” href=" {% static 'css/main.css' %} ">
+
+
+
+
+<div class="image_data">
+    <div class="image_description">
+        <div class="image_div">
+            <img src="{{room.imageURL}}" alt="" width="">
+        </div>
+        <h1>{{room.name}}</h1>
+        <p>{{room.description}}</p>
+        <p>comment your opinion </p>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="comment here " name="comment">
+            <!-- <button type="submit">Comment</button> -->
+        </form>
+    </div>
+
+    {% for message in messages %}
+    <div class="message">
+        {% if request.user == message.host %}
+        <div class="if_user">
+            <a href="{% url 'update-comment' message.id %}">Edit</a>
+
+            <a href="{% url 'delete-comment' message.id %}">Delete</a>
+        </div>
+        {% endif %}
+        <div class="messages">
+        <small>@{{message.host}} {{message.update|timesince}} ago</small>
+        <p>{{message.message}}</p>
+        </div>
+
+    </div>
+        {% endfor %}
+</div>
+
+
+
+{% endblock %}

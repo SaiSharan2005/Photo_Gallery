@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Photo_Gallery</title>
+</head>
+<style>
+    .body_back{
+        /* background: url('{{STATIC_URL}}images/background.jpg'); */
+        background: url("{% static 'images/background.jpg'%}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+</style>
+
+<body class="body_back">
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <h1>Photo Gall</h1>
+            </a>
+        </div>
+        <ul>
+            {% if request.user.is_authenticated %}
+
+            <li><a href="{% url 'user_profile' request.user.id  %}">{{request.user.username}}</p>
+            </li>{% endif %}
+
+            <li><a href="{% url 'upload-photo' %}">Upload Photo</a></li>
+            {% if request.user.is_authenticated %}
+
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- <hr> -->
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+
+</html>

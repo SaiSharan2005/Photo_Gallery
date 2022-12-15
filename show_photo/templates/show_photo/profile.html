@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1 class = "color_h1">Hi , this is {{user.username}}</h1>
+
+<div class="home-container">
+    {% for room in rooms %}
+    <div class="room_image">
+        <div class="if_user_auth">
+            {% if request.user == room.host %}
+
+            <a href="{% url 'update-image' room.id %}">Edit</a>
+
+            <a href="{% url 'delete-image' room.id %}">Delete</a>
+            {% endif %}
+        </div>
+        <div class="image_is_showed">
+
+            <a href="{%url 'image_view' room.id%}"><img src="{{room.imageURL}}" alt="nothing" height="200px"></a>
+        </div>
+        <div class="image_data">
+
+            <a href="{% url 'user_profile' room.host.id %}"><small>{{room.host}}</small></a>
+            <a>{{room.name}}</a>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

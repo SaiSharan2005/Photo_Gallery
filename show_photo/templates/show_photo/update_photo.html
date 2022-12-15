@@ -1,0 +1,33 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+{% if term == "Message" %}
+<div class="upload_photo"> 
+    <form class="login_form" method = "POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        <label for="" >Write the Message</label>
+        <input type="text" value = {{messages.message}} name = "comment">
+        <button type="submit">Update</button>
+    </form>
+
+</div>
+
+{% else %}
+
+<div class="upload_photo"> 
+    <form class="login_form" method = "POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+    
+        <label for="">Topic name</label>
+        <input type="text" placeholder= "Topic Name" value = '{{room.name}}' name ="name">
+        <label for="">Description</label>
+        <input type="text" placeholder= "Description" value = {{room.description}} name = "description">
+        <div class="submit">
+        <button type="submit">Upload</button>
+    </div>
+    </form>
+
+</div>
+{% endif %}
+{% endblock %}

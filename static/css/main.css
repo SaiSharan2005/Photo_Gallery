@@ -1,0 +1,249 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body_back {
+    /* background-image: url("{% static 'css/main.css' %}"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* navbar startes */
+nav {
+    margin: 14px 18px;
+}
+
+.navbar {
+
+    height: 42px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+
+    padding: 2px 2px;
+    width: 41px;
+    height: 36px;
+    border-radius: 51px;
+}
+
+.navbar .logo a {
+    color: black;
+    text-decoration: none;
+    padding: 0px 7px;
+    font-size: 23px;
+    font-family: 'Koulen', cursive;
+}
+
+.navbar li {
+    display: inline-block;
+    align-items:center;
+    list-style: none;
+    padding: 7px 15px 8px 15px;
+}
+
+.navbar li:hover {
+    background-color: rgb(58, 55, 55);
+    border-radius: 5px;
+}
+
+
+.navbar li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar li a:hover {
+    color: white;
+
+}
+
+/* navbar end */
+
+.home-container {
+    margin:5vh 5vw;
+    width:90vw;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr ;
+}
+.room_image{
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px white solid;
+    border-radius: 10px;
+}
+.room_image .if_user_auth a{
+    padding:0px 10px;
+    color: white;
+    text-decoration: none;
+}
+.room_image .image_is_showed{
+    display: flex;
+    padding:5px 10px;
+    border-bottom: 2px white solid;
+    justify-content: center;   
+}
+
+
+.room_image .image_data{
+    display: flex;
+    flex-direction: column;
+    padding:0px 20px;
+}
+
+.room_image .image_data a {
+    text-decoration: none;
+    color: white;
+}
+
+.room_image .image_data a{
+    font-size: 20px;
+}
+.room_image .image_data a small{
+    font-size: 25px;
+}
+
+.room_image .image_data p{
+    padding:3px 5px;
+    font-size: 15px;
+    color: white;
+
+}
+.color_h1{
+    color: white;
+    margin: 10px 0px 0px 40px;
+}
+
+/* photo upload startes */
+
+.upload_photo{
+    margin: 10vh 23vw;
+    padding: 10px;
+    /* background-color: rgb(30, 15, 72); */
+}
+.upload_photo form{
+    width: 50vw;
+    height: 50vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload_photo p{
+    font-size: 35px;
+    margin: 4px;
+    color: white;
+
+} 
+.upload_photo form label{
+    font-size: 30px;
+    margin: 13px;
+}
+.upload_photo form input{
+    height: 33px;
+    width: 44vw;
+    /* margin: 20px; */
+
+}
+/* photo upload ends */
+
+/* login starts */
+
+.login {
+    /* width: 34vw; */
+    margin: 10px;
+    /* background-color: rgb(30, 15, 72); */
+    /* border-radius: 2px solid; */
+}
+p{
+    color:aliceblue;
+}
+
+.login_form .submit button{
+    margin:20px;
+    width:30vw;
+}
+/* login ends */
+.image_data{
+    display: flex;
+    flex-direction: column;
+}
+.image_data .image_description{
+    display:flex;
+    flex-direction: column;
+}
+.image_data .image_description .image_div{
+    display:flex;
+    justify-content: center;
+} 
+
+.image_data .image_description .image_div img{
+    height:60vh;
+    width: auto;
+}
+
+.image_data .image_description h1{
+    color:white;
+    margin:10px 20px;
+}
+.image_data .image_description p{
+    margin:10px 20px;
+    color:white;
+    font-size:20px;
+}
+.image_data .image_description form input{
+    width:90vw;
+    height:20px
+}
+
+.image_data .message{
+    margin:5px;
+    display:flex;
+    flex-direction: column;
+    border: 2px solid rgb(198, 198, 198) ;
+    border-radius: 5px;
+}
+.image_data .if_user {
+    margin: 3px ;
+}
+.image_data .if_user a{
+    color:rgb(198, 198, 198);
+    padding: 0px 3px ;
+    /* color:white; */
+    text-decoration: none;
+
+}
+.image_data .messages{
+    display: flex;
+    flex-direction: column;
+
+    margin: 3px ;
+
+}
+.image_data .messages small{
+    margin: 3px ;
+    font-size: 20px;
+    color: white;
+}
+.image_data .messages p{
+    margin: 3px ;
+    font-size: 20px;
+    color: white;
+}

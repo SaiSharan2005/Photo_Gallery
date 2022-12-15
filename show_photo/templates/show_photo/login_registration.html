@@ -1,0 +1,43 @@
+{% extends 'main.html'%}
+{% block content %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if task == 'login' %}
+<div class="upload_photo">
+    <form class="login_form" method='POST'>
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" placeholder="Enter the username" name="username" />
+        <label for="">Password</label>
+        <input type="password" placeholder="Enter the password" name="password" />
+        <div class="login">
+        <input  type="submit" value="Login" />
+    </div>
+        <p>Not yet Sign Up?</p>
+        <a href="{% url 'signup' %}">Sign UP</a>
+    </form>
+</div>
+{% else %}
+<div class="upload_photo">
+    <form class="login_form" method='POST'>
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" placeholder="Enter the username" name="username" />
+        <label for="">Password</label>
+        <input type="password" placeholder="Enter the password" name="password" />
+        <input type="submit" value="Sign_Up" />
+        <p>Have an account?</p>
+        <a href="{% url 'login' %}">Login</a>
+
+    </form>
+</div>
+{% endif %}
+
+{% endblock %}
